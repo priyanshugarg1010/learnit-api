@@ -11,8 +11,6 @@ const login = async (req, res, next) => {
     if (!user) return next(createError(404, "user not found"));
 
     const isCorrect = await bcrypt.compare(req.body.password, user.password);
-    console.log(req.body.email);
-    console.log(req.body.password);
     if (!isCorrect) return next(createError(400, "wrong password or email"));
 
     const token = jwt.sign(
