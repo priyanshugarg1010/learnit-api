@@ -11,7 +11,7 @@ const verifyToken = require("../middleware/jwt.js");
 // router.delete("/:id", verifyToken, deleteUser);
 // verifyToken,
 router.get("/", getCourses);
-router.get("/mycourses", getMyCourses);
-router.post("/mycourses", saveMyCourses);
+router.get("/mycourses/:email", getMyCourses);
+router.post("/:courseId", saveMyCourses);
 
 module.exports = router;

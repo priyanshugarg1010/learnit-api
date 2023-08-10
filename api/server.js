@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["http://127.0.0.1:5173", "https://learnit.onrender.com"],
+    origin: ["http://127.0.0.1:5173", "https://learnit-client.onrender.com"],
     credentials: true,
   })
 );
@@ -45,18 +45,6 @@ app.use("/user", authRoute);
 app.use("/courses", courseRoute);
 
 // app.use("/user", userRoute);
-
-// app.use((err, req, res) => {
-//   const errStatus = err.status || 500;
-//   const errMessage = err.message || "you are a bad developer";
-
-//   return res.status(errStatus).send(errMessage);
-// });
-// app.get("/courses", async (req, res) => {
-//   // logic to get all courses
-//   const courses = await Course.find({});
-//   res.json({ courses });
-// });
 
 app.listen(3000, () => {
   connect();
